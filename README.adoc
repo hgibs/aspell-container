@@ -1,0 +1,17 @@
+== aspell docker image
+
+See: http://aspell.net/
+
+=== Building
+
+[,bash]
+----
+docker buildx bake -f docker-bake.hcl
+----
+
+=== Deploying
+
+[,bash]
+----
+docker buildx bake -f docker-bake.hcl --push
+----
