@@ -15,7 +15,6 @@ group "default" {
 }
 
 target "main" {
-  name = "main-${replace(platform, "/", "_")}"
   args = {
     ASPELL_VERSION = "${major_version}.${minor_version}.${patch_version}"
   }
@@ -26,8 +25,5 @@ target "main" {
     "docker.io/hgibs/aspell:${major_version}.${minor_version}",
     "docker.io/hgibs/aspell:${major_version}.${minor_version}.${patch_version}",
   ]
-  matrix = {
-    platform = ["linux/amd64", "linux/arm64"]
-  }
-  platforms = ["${platform}"]
+  platforms = ["linux/amd64", "linux/arm64"]
 }

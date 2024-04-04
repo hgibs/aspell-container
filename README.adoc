@@ -2,6 +2,15 @@
 
 See: http://aspell.net/
 
+Useful for running spell check in your code:
+
+[,console]
+----
+$ docker run --rm -it --entrypoint ash -v $(pwd):/app hgibs/aspell:latest
+/ # find /app -name '*.adoc' -exec aspell check {} \;
+----
+
+
 === Building
 
 [,bash]
